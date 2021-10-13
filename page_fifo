@@ -1,0 +1,40 @@
+#include<stdio.h>
+void main(){
+int a[20],q[20],n,f=-1,r=-1,m,h=0,ff=0,i,j,flag;
+
+printf("enter number of pages:");
+scanf("%d",&n);
+printf("\nenter  page :\n");
+for(i=0;i<n;i++)
+scanf("%d",&a[i]);
+printf("\nenter the maximum number of Ram :");
+scanf("%d",&m);
+for(i=0;i<m;i++)
+  q[i]=-1;
+for (i=0; i<n; i++) {
+        flag=0;
+        if (r==-1 && f==-1) {
+           r++;f++;
+          q[r]=a[i];
+          ff++;}
+      else{
+          for(int p=0;p<m;p++){
+        if(q[p]==a[i])
+            {  h++;
+              flag=1;}    }
+        if(flag==0){
+               if (r<m-1 ){  r++;ff++;
+                  q[r]=a[i];  }
+              else  {
+              r=(r+1)%m;
+              q[r]=a[i];
+              ff++;  }  }
+    }
+        printf("\n         -------------------\n =>%d     |",a[i] );
+        for(j=0;j<m;j++){
+              if(q[j]==-1)    printf("  N  |");
+              else  printf("   %d |",q[j] );  }
+          if(flag==1)  printf("     Already exist in RAM (Hit)" );
+          printf("\n         -------------------\n" );}
+printf("\n Total number of fault => %d\n Total number of hit => %d",ff,h );
+printf("\n\n avg fault => %f \n avg hit => %f",((float)ff/n)*100,((float)h/n)*100 ); }
