@@ -1,0 +1,12 @@
+#include<stdio.h>
+void main(){
+int a[20],q[20],n,f=-1,r=-1,m,h=0,ff=0,i,j,flag;
+
+printf("enter number of pages:");
+scanf("%d",&n);
+printf("\nenter  page :\n");
+for(i=0;i<n;i++)
+scanf("%d",&a[i]);
+printf("\nenter the maximum number of Ram :");
+scanf("%d",&m);
+}
